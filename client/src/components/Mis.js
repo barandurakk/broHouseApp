@@ -3,6 +3,7 @@ import "../css/Mis.css";
 import { connect } from "react-redux";
 import { deletePost, fetchData, misToNacak } from "../actions/dataActions";
 import { Swipeable } from "react-swipeable";
+import DecideDate from "../util/DecideDate";
 
 class Mis extends React.Component {
   state = {
@@ -53,6 +54,9 @@ class Mis extends React.Component {
           onSwiped={(e, id) => this.handleAfterSwipe(e, mis._id)}
           preventDefaultTouchmoveEvent={true}
         >
+          <span className="mis-date">
+            <DecideDate dateSent={mis.dateSent} />
+          </span>
           <div
             className="mis-wrapper"
             style={{

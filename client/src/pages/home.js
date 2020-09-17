@@ -61,7 +61,7 @@ class Home extends React.Component {
 
   render() {
     const { auth, loading } = this.props;
-    console.log(auth);
+
     return loading ? <p>Yükleniyor...</p> : auth ? this.renderHome() : this.renderForbidden();
   }
 }

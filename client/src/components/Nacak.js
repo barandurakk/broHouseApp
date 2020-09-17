@@ -3,6 +3,7 @@ import { Swipeable } from "react-swipeable";
 //redux
 import { connect } from "react-redux";
 import { deletePost, updatePost, fetchData, nacakToMis } from "../actions/dataActions";
+import DecideDate from "../util/DecideDate";
 
 import "../css/Nacak.css";
 
@@ -89,6 +90,9 @@ class Nacak extends React.Component {
           onSwiped={(e, id) => this.handleAfterSwipe(e, nacak._id)}
           preventDefaultTouchmoveEvent={true}
         >
+          <span className="nacak-date">
+            <DecideDate dateSent={nacak.dateSent} />
+          </span>
           <div
             className="nacak-wrapper"
             style={{

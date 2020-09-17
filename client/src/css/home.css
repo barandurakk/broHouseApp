@@ -1,0 +1,68 @@
+/*Desktop*/
+@media only screen and (min-width: 601px) {
+}
+
+/*Mobile*/
+@media only screen and (max-width: 600px) {
+  .home-container {
+    height: 100%;
+  }
+
+  .data-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    position: absolute;
+    top: 130px;
+    bottom: 0px;
+  }
+
+  .nacak-container {
+    position: relative;
+    width: 100%;
+    min-height: 30%;
+    height: 100%;
+    background-color: #fcfaf7;
+    overflow-y: scroll;
+  }
+
+  .mis-container {
+    position: relative;
+    min-height: 30%;
+    height: 70%;
+    bottom: 0px;
+    background-color: tomato;
+    width: 100%;
+    overflow-y: scroll;
+  }
+
+  .show-mis-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 10px 15px 10px;
+    border-radius: 50%;
+    font-weight: 800;
+    font-size: 18px;
+    background-color: #f27807;
+    border-color: white;
+    color: white;
+  }
+
+  .hidden {
+    display: none;
+  }
+  .nacak-title {
+    margin: 0px;
+    padding: 7px 0px;
+    text-align: center;
+    color: #777777;
+  }
+
+  .mis-title {
+    margin: 0px;
+    padding: 7px 0px;
+    text-align: center;
+    color: #ffffff;
+  }
+}

@@ -1,0 +1,33 @@
+/*Desktop*/
+@media only screen and (min-width: 601px) {
+}
+
+/*Mobile*/
+@media only screen and (max-width: 600px) {
+  .login-form-container {
+    justify-content: center;
+  }
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .error-message {
+    font-size: 16px;
+    font-weight: 700;
+    color: red;
+    text-align: center;
+    margin: 0px 0px 10px 0px;
+  }
+  .form-button {
+    width: 50%;
+    justify-content: center;
+    align-self: center;
+    margin-top: 10px;
+    background-color: #f27807;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    padding: 5px;
+    border: solid white 1px;
+  }
+}

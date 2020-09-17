@@ -1,0 +1,9 @@
+export const SET_UNAUTHENTICATED = "SET_UNAUTHENTICATED";
+export const SET_OWNER = "SET_OWNER";
+export const SET_ERROR = "SET_ERROR";
+export const SET_DATA = "SET_DATA";
+export const POST_DATA = "POST_DATA";
+export const DELETE_DATA = "DELETE_DATA";
+export const UPDATE_DATA = "UPDATE_DATA";
+export const TO_NACAK = "TO_NACAK";
+export const TO_MIS = "TO_MİS";

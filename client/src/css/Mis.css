@@ -1,0 +1,75 @@
+/*Desktop*/
+@media only screen and (min-width: 601px) {
+}
+
+/*Mobile*/
+@media only screen and (max-width: 600px) {
+  .mis-wrapper {
+    padding: 8px 20px 8px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #efefef;
+    border-radius: 5px;
+    margin: 5px;
+  }
+  .mis-text {
+    font-size: 16px;
+  }
+  .mis-owner {
+    font-size: 16px;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 40px;
+    text-align: center;
+  }
+  .mis-detail-container {
+    display: flex;
+    float: right;
+  }
+
+  .mis-buttons {
+    margin-right: 10px;
+  }
+
+  .mis-update-button {
+    margin-right: 10px;
+    background-color: #f27807;
+    color: white;
+    font-weight: 600;
+    border: 0px;
+    padding: 2px 6px 2px 6px;
+  }
+
+  .mis-delete-button {
+    background-color: #d31515;
+    color: white;
+    font-weight: 600;
+    border: 0px;
+    padding: 2px 7px 2px 7px;
+  }
+
+  .mis-cost {
+    display: flex;
+    font-size: 12px;
+    color: #8e8e8e;
+    width: 30px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .blue {
+    color: #00c7ff;
+  }
+
+  .red {
+    color: #d31515;
+  }
+
+  .green {
+    color: #11bf2e;
+  }
+  .hidden {
+    display: none;
+  }
+}

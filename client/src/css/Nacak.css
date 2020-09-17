@@ -1,0 +1,132 @@
+/*Desktop*/
+@media only screen and (min-width: 601px) {
+}
+
+/*Mobile*/
+@media only screen and (max-width: 600px) {
+  .nacak-wrapper {
+    padding: 8px 20px 8px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #efefef;
+    border-radius: 5px;
+    margin: 5px;
+  }
+  .nacak-text {
+    font-size: 16px;
+  }
+  .nacak-owner {
+    font-size: 16px;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 40px;
+    text-align: center;
+  }
+  .nacak-detail-container {
+    display: flex;
+    float: right;
+  }
+
+  .nacak-buttons {
+    margin-right: 10px;
+  }
+
+  .nacak-update-button {
+    margin-right: 10px;
+    background-color: #f27807;
+    color: white;
+    font-weight: 600;
+    border: 0px;
+    padding: 2px 6px 2px 6px;
+  }
+
+  .nacak-delete-button {
+    background-color: #d31515;
+    color: white;
+    font-weight: 600;
+    border: 0px;
+    padding: 2px 7px 2px 7px;
+  }
+
+  .nacak-cost {
+    display: flex;
+    font-size: 12px;
+    color: #8e8e8e;
+    width: 30px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .blue {
+    color: #00c7ff;
+  }
+
+  .red {
+    color: #d31515;
+  }
+
+  .green {
+    color: #11bf2e;
+  }
+  .hidden {
+    display: none;
+  }
+
+  .update-container {
+    padding: 10px;
+    background-color: #efefef;
+    height: 130px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    border: solid black 1px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+  }
+  .popup-wrapper {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .popup-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 2;
+  }
+
+  .popup-action-wrapper {
+    display: flex;
+    flex-grow: 2;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .popup-button {
+    padding: 10px 10px;
+    margin-right: 10px;
+    border: 0px;
+    border-radius: 5px;
+    font-weight: 600;
+  }
+  .close {
+    background-color: red;
+    color: white;
+    padding: 7px 10px;
+  }
+  .update {
+    background-color: #f27807;
+    color: white;
+  }
+  .update-label {
+    color: black;
+    margin-right: 10px;
+    font-weight: 500;
+  }
+}

@@ -1,0 +1,69 @@
+/*Desktop*/
+@media only screen and (min-width: 601px) {
+  .landing-body {
+    background-image: url("../img/woodDoor.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .landing-title {
+    margin: 0px;
+    font-size: 64px;
+    color: #ffffff;
+  }
+
+  .landing-desc {
+    margin: 0px;
+    font-size: 32px;
+    color: #ffffff;
+  }
+}
+
+/*Mobile*/
+@media only screen and (max-width: 600px) {
+  .landing-body {
+    background-image: url("../img/door.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .landing-title-wrapper {
+    padding-top: 20%;
+  }
+
+  .landing-title {
+    margin: 0px;
+    font-size: 54px;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .landing-desc {
+    margin: 0px;
+    font-size: 22px;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .login-container {
+    margin-top: 20%;
+    width: 100%;
+  }
+  .login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: 300px;
+    width: 300px;
+    background-color: rgba(231, 166, 26);
+    border-radius: 50%;
+    -webkit-box-shadow: 10px 10px 50px 30px rgba(0, 0, 0, 0.85);
+    -moz-box-shadow: 10px 10px 50px 30px rgba(0, 0, 0, 0.85);
+    box-shadow: 10px 10px 50px 30px rgba(0, 0, 0, 0.85);
+  }
+}

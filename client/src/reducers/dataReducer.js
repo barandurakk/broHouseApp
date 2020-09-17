@@ -1,6 +1,5 @@
 import {
   SET_UNAUTHENTICATED,
-  SET_OWNER,
   SET_ERROR,
   SET_DATA,
   POST_DATA,
@@ -8,25 +7,34 @@ import {
   UPDATE_DATA,
   TO_NACAK,
   TO_MIS,
+  SET_USER,
+  LOADING_DATA,
 } from "../actions/types";
 
 const initialState = {
   caklar: [],
   mislar: [],
-  cak: {},
-  mis: {},
   authenticated: false,
   ownerName: "",
   error: "",
+  loading: false,
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case SET_OWNER:
+    case LOADING_DATA:
+      return {
+        ...state,
+        loading: true,
+      };
+
+    case SET_USER:
+      let owner = action.payload;
       return {
         ...state,
         authenticated: true,
-        ownerName: action.payload,
+        ownerName: owner.name,
+        loading: false,
       };
 
     case SET_UNAUTHENTICATED:
@@ -34,6 +42,7 @@ export default (state = initialState, action) => {
         ...state,
         ownerName: "",
         authenticated: false,
+        loading: false,
       };
 
     case SET_ERROR:
@@ -57,6 +66,7 @@ export default (state = initialState, action) => {
         ...state,
         caklar: nacaklar,
         mislar: mislar,
+        loading: false,
       };
 
     case POST_DATA:
@@ -64,6 +74,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         caklar: [newData, ...state.caklar],
+        loading: false,
       };
 
     case DELETE_DATA:
@@ -75,6 +86,7 @@ export default (state = initialState, action) => {
         ...state,
         caklar: deletedCaklar,
         mislar: deletedMislar,
+        loading: false,
       };
 
     case UPDATE_DATA:
@@ -85,6 +97,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         caklar: newCak,
+        loading: false,
       };
 
     case TO_MIS:
@@ -97,6 +110,7 @@ export default (state = initialState, action) => {
         ...state,
         caklar: newCaklar,
         mislar: [updatedMis, ...state.mislar],
+        loading: false,
       };
 
     case TO_NACAK:
@@ -109,6 +123,7 @@ export default (state = initialState, action) => {
         ...state,
         mislar: newMislar,
         caklar: [updatedCak, ...state.caklar],
+        loading: false,
       };
 
     default:

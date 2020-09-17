@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { fetchData } from "../actions/dataActions";
+import { fetchUser } from "../actions/authActions";
 import "../css/home.css";
 
 //comp
@@ -14,8 +15,9 @@ class Home extends React.Component {
     hidden: true,
   };
 
-  UNSAFE_componentWillMount() {
+  componentDidMount() {
     this.props.fetchData();
+    this.props.fetchUser();
   }
 
   handleShow = () => {
@@ -54,14 +56,13 @@ class Home extends React.Component {
   };
 
   renderForbidden = () => {
-    this.props.history.push("/");
     return <div>İZNİN YOK!</div>;
   };
 
   render() {
-    const { auth } = this.props;
-
-    return auth ? this.renderHome() : this.renderForbidden();
+    const { auth, loading } = this.props;
+    console.log(auth);
+    return loading ? <p>Yükleniyor...</p> : auth ? this.renderHome() : this.renderForbidden();
   }
 }
 
@@ -70,7 +71,8 @@ const mapStateToProps = (state) => {
     auth: state.data.authenticated,
     nacaklar: state.data.caklar,
     mislar: state.data.mislar,
+    loading: state.data.loading,
   };
 };
 
-export default connect(mapStateToProps, { fetchData })(withRouter(Home));
+export default connect(mapStateToProps, { fetchData, fetchUser })(withRouter(Home));

@@ -20,7 +20,7 @@ class LoginForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state.code);
+
     const userData = {
       pass: this.state.code,
     };
@@ -29,7 +29,7 @@ class LoginForm extends React.Component {
   };
 
   render() {
-    const { error, auth } = this.props;
+    const { error } = this.props;
 
     return (
       <div className="login-form-container">

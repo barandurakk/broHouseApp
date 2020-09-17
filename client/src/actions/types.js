@@ -7,3 +7,5 @@ export const DELETE_DATA = "DELETE_DATA";
 export const UPDATE_DATA = "UPDATE_DATA";
 export const TO_NACAK = "TO_NACAK";
 export const TO_MIS = "TO_MİS";
+export const SET_USER = "SET_USER";
+export const LOADING_DATA = "LOADING_DATA";

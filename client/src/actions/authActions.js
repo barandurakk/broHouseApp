@@ -1,12 +1,13 @@
-import { SET_UNAUTHENTICATED, SET_OWNER, SET_ERROR, SET_DATA } from "./types";
+import { SET_UNAUTHENTICATED, SET_ERROR, SET_USER, LOADING_DATA } from "./types";
 import axios from "axios";
+import _ from "lodash";
 
 export const loginUser = (userData, history) => (dispatch) => {
-  console.log(userData);
+  dispatch({ type: LOADING_DATA });
   axios
     .post("/api/login", { pass: userData.pass })
     .then((res) => {
-      dispatch({ type: SET_OWNER, payload: res.data.name });
+      dispatch(fetchUser());
       history.push("/home");
     })
     .catch((err) => {
@@ -18,11 +19,16 @@ export const logoutUser = () => (dispatch) => {
   dispatch({ type: SET_UNAUTHENTICATED });
 };
 
-export const fetchData = () => (dispatch) => {
+export const fetchUser = () => (dispatch) => {
+  dispatch({ type: LOADING_DATA });
   axios
-    .get("/api/nacaklar")
+    .get("/api/ownerDetail")
     .then((res) => {
-      dispatch({ type: SET_DATA, payload: res.data });
+      if (_.isEmpty(res.data)) {
+        dispatch({ type: SET_UNAUTHENTICATED });
+      } else {
+        dispatch({ type: SET_USER, payload: res.data });
+      }
     })
     .catch((err) => {
       console.error(err);

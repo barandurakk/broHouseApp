@@ -1,7 +1,16 @@
-import { SET_DATA, POST_DATA, DELETE_DATA, UPDATE_DATA, TO_MIS, TO_NACAK } from "./types";
+import {
+  SET_DATA,
+  POST_DATA,
+  DELETE_DATA,
+  UPDATE_DATA,
+  TO_MIS,
+  TO_NACAK,
+  LOADING_DATA,
+} from "./types";
 import axios from "axios";
 
 export const fetchData = () => (dispatch) => {
+  dispatch({ type: LOADING_DATA });
   axios
     .get("/api/nacaklar")
     .then((res) => {
@@ -13,6 +22,7 @@ export const fetchData = () => (dispatch) => {
 };
 
 export const postData = (dataDetail) => (dispatch) => {
+  dispatch({ type: LOADING_DATA });
   axios
     .post("/api/yeni", dataDetail)
     .then((res) => {
@@ -24,6 +34,7 @@ export const postData = (dataDetail) => (dispatch) => {
 };
 
 export const deletePost = (id) => (dispatch) => {
+  dispatch({ type: LOADING_DATA });
   axios
     .get(`/api/sil/${id}`)
     .then((res) => {
@@ -35,6 +46,7 @@ export const deletePost = (id) => (dispatch) => {
 };
 
 export const updatePost = (id, newData) => (dispatch) => {
+  dispatch({ type: LOADING_DATA });
   axios
     .post(`/api/guncelle/${id}`, { body: newData.body, cost: newData.cost })
     .then((res) => {
@@ -46,6 +58,7 @@ export const updatePost = (id, newData) => (dispatch) => {
 };
 
 export const nacakToMis = (id) => (dispatch) => {
+  dispatch({ type: LOADING_DATA });
   axios
     .get(`/api/toMis/${id}`)
     .then((res) => {
@@ -57,6 +70,7 @@ export const nacakToMis = (id) => (dispatch) => {
 };
 
 export const misToNacak = (id) => (dispatch) => {
+  dispatch({ type: LOADING_DATA });
   axios
     .get(`/api/toNacak/${id}`)
     .then((res) => {
